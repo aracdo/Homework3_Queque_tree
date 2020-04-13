@@ -32,12 +32,20 @@ void show(Queue q){
 void Queue::push ( int num ) 
 { 
    if ( tail+1 ==head || ( tail+ 1 ==SIZE && !head )) { 
-     cout << "Queue are full\n" ; 
-     return ; 
-   } 
-   tail++; 
-   if ( tail==SIZE ) tail = 0 ;
-   queue [ tail ] = num; 
+    int *tmp = new int[SIZE+1];
+    for (int i=0; i<SIZE;i++){
+        tmp[i]=queue[i];
+    }
+    SIZE+=1;
+    tmp[SIZE]=num;
+    queue = tmp;
+   }
+   else{
+    tail++; 
+    if ( tail==SIZE ) tail = 0 ;
+    queue [ tail ] = num; 
+    
+   }
 } 
 
 void Queue::pop() 
