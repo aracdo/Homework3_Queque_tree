@@ -5,7 +5,7 @@
 using namespace std; 
  
 class Queue {   
-static const int SIZE=100; 
+int SIZE=10; 
 int *queue; 
    int head, tail; 
 public :
